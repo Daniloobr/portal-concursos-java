@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aprovados</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <div class="interface">
+        <header class="cabecalho">
+            <img th:src="@{/img/images.jfif}" alt="Logo Portal" class="logo">
+        </header>
+
+        <h1>Cadastro de Aprovados</h1>
+
+        <div th:if="${param.sucesso}" class="alerta-sucesso">
+            ✅ Cadastro realizado com sucesso!
+        </div>
+
+        <form th:action="@{/salvar}" th:object="${aprovado}" method="post" enctype="multipart/form-data">
+            
+            <div class="input-group">
+                <label>Nome Completo:</label>
+                <input type="text" th:field="*{nome}" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="input-group">
+                <label>E-mail:</label>
+                <input type="email" th:field="*{email}" placeholder="exemplo@email.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>Telefone:</label>
+                <input type="tel" th:field="*{telefone}" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="input-group">
+                <label>Concursos Aprovados:</label>
+                <input type="text" th:field="*{concursos}" placeholder="Ex: INSS, PF, Receita Federal">
+            </div>
+
+            <div class="input-group">
+                <label>Sua Foto:</label>
+                <input type="file" name="file" accept="image/*" class="input-file">
+            </div>
+
+            <button type="submit" class="btn-enviar">Cadastrar Aprovado</button>
+        </form>
+    </div>
+
+</body>
+</html>
