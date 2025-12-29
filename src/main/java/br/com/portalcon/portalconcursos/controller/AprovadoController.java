@@ -18,18 +18,19 @@ public class AprovadoController {
     @Autowired
     private AprovadoService service;
 
-    @GetMapping("/cadastro")
+    // AQUI ESTÁ A MUDANÇA: Adicionei {"/", "/cadastro"} para aceitar os dois
+    // endereços
+    @GetMapping({ "/", "/cadastro" })
     public String exibirFormulario(Model model) {
         model.addAttribute("aprovado", new Aprovado());
-        return "index"; // Isso buscará um arquivo chamado formulario.html
+        return "index";
     }
 
-    // 2. Rota para receber os dados do formulário
     @PostMapping("/salvar")
     public String salvarAprovado(Aprovado aprovado,
             @RequestParam("file") MultipartFile file) throws IOException {
 
         service.salvar(aprovado, file);
-        return "redirect:/cadastro?sucesso"; // Redireciona de volta com uma mensagem de sucesso
+        return "redirect:/cadastro?sucesso";
     }
 }
