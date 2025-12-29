@@ -23,7 +23,7 @@ public class AprovadoController {
     @GetMapping({ "/", "/cadastro" })
     public String exibirFormulario(Model model) {
         model.addAttribute("aprovado", new Aprovado());
-        return "index";
+        return "formulario";
     }
 
     @PostMapping("/salvar")
