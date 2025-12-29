@@ -57,6 +57,5 @@ Nesta versão, foquei em aplicar conceitos modernos de desenvolvimento:
 ## 👨‍💻 Sobre o Desenvolvedor
 
 Projeto desenvolvido por **Danilo**
-Projeto desenvolvido por **Danilo**, focado em aprimorar habilidades em **CSS Moderno** e consolidar conhecimentos no ecossistema **Java/Spring Boot**.
 
 ---
